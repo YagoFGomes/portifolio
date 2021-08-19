@@ -23,6 +23,16 @@ http.createServer((req,res) => {
             }
         )
     }
+    if(req.url === '/projetos'){
+        fs.readFile(
+            path.join(__dirname, '..', 'pages', 'projetos.html'),
+            (err, content) => {
+                if(err) throw err
+
+                res.end(content)
+            }
+        )
+    }
 
 
 }).listen(5000, () => console.log('server ok'))
